@@ -7,21 +7,36 @@
 </head>
 <body>
     <h1>Create Account</h1>
-    <form id="signup">
-        Email:
-        <input type="email" name="" id="email">
-        <br>
-        Password:
-        <input type="password" name="" id="password">
-        <br>
-        <input type="button" value="SignUp">
-    </form>
-    
+    <fieldset>
+        <legend>Sign Up</legend>
+        <form id="signup">
+            Email:
+            <input type="email" name="" id="email-signup">
+            <br>
+            Password:
+            <input type="password" name="" id="password-signup">
+            <br>
+            <button>SignUp</button>
+            <button id="logout">logout</button>
+        </form>
+    </fieldset>
+    <br><br>
+    <fieldset>
+        <legend>Login</legend>
+        <form id="login">
+            Email:
+            <input type="email" name="" id="email">
+            <br>
+            Password:
+            <input type="password" name="" id="password">
+            <br>
+            <button>Login</button>
+        </form>
+    </fieldset>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
     <script src="app.js"></script>
-    <script src="signup.js"></script>
 </body>
 </html>

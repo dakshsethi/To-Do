@@ -13,3 +13,55 @@ firebase.initializeApp(firebaseConfig);
 // Make Auth and Firestore references
 const auth = firebase.auth();
 const db = firebase.firestore();
+
+//Listen for Auth State Chnages
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log('user logged in : ', user);
+  } else {
+    console.log('user logged out');
+  }
+})
+
+
+
+
+
+//SignUp
+const signUp = document.querySelector("#signup");
+signUp.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  //Getting User Info
+  const email =  signUp['email-signup'].value;
+  const password =  signUp['password-signup'].value;
+
+  //SignUp the user
+  auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    //location.replace("https://www.w3schools.com")
+  });
+});
+
+//Logout
+const logout = document.querySelector("#logout");
+logout.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  auth.signOut().then(() => {
+    //location.replace("https://www.w3schools.com")
+  });
+});
+
+//Login
+const login = document.querySelector("#login");
+login.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  //Getting User Info
+  const email = login['email'].value;
+  const password = login['password'].value;
+
+  auth.signInWithEmailAndPassword(email, password).then(cred => {
+
+  });
+});

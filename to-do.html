@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .item {
+            background: rgb(209, 209, 209);
+            padding: 10px;
+            width: 80%;
+            margin: 0.5em;
+        }
+
+        .cross {
+            float: right;
+            background: white;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Add To-Do</legend>
+        <form id="to-do">
+            To-Do item:
+            <input type="text" id="todo" name="item">
+            <br>
+            <button>Add item</button>
+        </form>
+    </fieldset>
+    <div class="container" id="itemList">
+        <!--
+        Example
+        <div class="item">
+            <span class="text">Play for 1hour</span>
+            <div class="icons" id="del">
+                X
+            </div>
+        </div>
+        -->
+    </div>
+    
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script src="app1.js"></script>
+</body>
+</html>

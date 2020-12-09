@@ -150,15 +150,15 @@ function check(text) {
     }
     text.dataset.check = c;
 
-    db.collection('todo').doc(id).delete();
-    db.collection('todo').add({
-        item: text.value,
-        check: c
-    });
-
-    // db.collection('todo').doc(id).update({
+    // db.collection('todo').doc(id).delete();
+    // db.collection('todo').add({
+    //     item: text.value,
     //     check: c
-    // })
+    // });
+
+    db.collection('todo').doc(id).update({
+        check: c
+    })
 }
 
 function update(text) {
@@ -169,6 +169,13 @@ function update(text) {
     text.removeEventListener('click',check(text));
     text.classList.remove('checked');
 
+    
+    // db.collection('todo').doc(id).delete();
+    // db.collection('todo').add({
+    //     item: text.value,
+    //     check: false
+    // });
+    
     db.collection('todo').doc(id).update({
         item: value,
         check: false

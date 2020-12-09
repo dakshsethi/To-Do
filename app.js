@@ -38,7 +38,7 @@ signUp.addEventListener('submit', (e) => {
 
   //SignUp the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    //location.replace("https://www.w3schools.com")
+    location.replace("index.html")
   });
 });
 
@@ -62,6 +62,6 @@ login.addEventListener("submit", (e) => {
   const password = login['password'].value;
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
-
+    location.replace("index.html")
   });
 });

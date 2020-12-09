@@ -149,9 +149,16 @@ function check(text) {
         c = false;
     }
     text.dataset.check = c;
-    db.collection('todo').doc(id).update({
+
+    db.collection('todo').doc(id).delete();
+    db.collection('todo').add({
+        item: text.value,
         check: c
-    })
+    });
+
+    // db.collection('todo').doc(id).update({
+    //     check: c
+    // })
 }
 
 function update(text) {

@@ -15,13 +15,13 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 //Listen for Auth State Chnages
-auth.onAuthStateChanged(user => {
-  if (user) {
-    console.log('user logged in : ', user);
-  } else {
-    console.log('user logged out');
-  }
-})
+// auth.onAuthStateChanged(user => {
+//   if (user) {
+//     console.log('user logged in : ', user);
+//   } else {
+//     console.log('user logged out');
+//   }
+// })
 
 
 
@@ -62,6 +62,7 @@ login.addEventListener("submit", (e) => {
   const password = login['password'].value;
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
-    location.replace("index.html")
+    console.log(cred.user.uid);
+    //location.replace("index.html")
   });
 });

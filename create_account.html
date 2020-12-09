@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        form {
+            padding: 8px;
+        }
+        input {
+            padding: 2px 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <fieldset>
+        <legend>Create your account</legend>
+        <form id="signup">
+            Name: <br>
+            <input type="text" name="name" id="name" required>
+            <br><br>
+            Email: <br>
+            <input type="email" name="email" id="email" required>
+            <br><br>
+            Password: <br>
+            <input type="password" name="password" id="password" required>
+            <br><br>
+            Age: <br>
+            <input type="number" name="age" id="age" required min="0">
+            <br><br>
+            Gender: <br>
+            <input type="radio" name="gender" value="M" required>Male
+            <input type="radio" name="gender" value="F" required>Female
+            <br><br>
+            <button>Create Account</button>
+        </form>
+    </fieldset>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+    <script src="auth1.js"></script>
+</body>
+</html>

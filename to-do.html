@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         .container {
             display: flex;
@@ -15,6 +16,7 @@
             padding: 10px;
             width: 80%;
             margin: 0.5em;
+            display: flex;
         }
 
         .cross {
@@ -22,6 +24,36 @@
             background: white;
             padding: 0 5px;
             cursor: pointer;
+        }
+
+        .disabled {
+            pointer-events: all;
+            background: none;
+            border: none;
+            font-size: 16px;
+            flex: 1;
+        }
+
+        .disabled:focus {
+            outline: none;
+        }
+
+        i {
+            margin: 0.1em;
+            font-size: 20px;
+        }
+
+        .enabled {
+            pointer-events: all;
+            background: rgba(255, 255, 255, 0.589);
+            border-bottom:  1px solid grey;
+        }
+        .enabled:focus {
+            outline: none;
+        }
+
+        .checked {
+            text-decoration: line-through;
         }
     </style>
 </head>
@@ -36,15 +68,12 @@
         </form>
     </fieldset>
     <div class="container" id="itemList">
-        <!--
-        Example
         <div class="item">
-            <span class="text">Play for 1hour</span>
-            <div class="icons" id="del">
-                X
-            </div>
+            <input type="text" class="disabled enabled">
+            <i class="far fa-edit" id="edit"></i>
+            <i class="fas fa-check" id="tick"></i>
+            <i class="fas fa-times" id="cross"></i>
         </div>
-        -->
     </div>
     
     

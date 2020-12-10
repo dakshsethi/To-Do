@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        header {
+            font-size: 20px;
+            font-family: sans-serif;
+            height: 8vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        button {
+            background: rgb(31, 103, 236);
+            border: rgb(31, 103, 236) 1px solid;
+            color: white;
+            font-size: 20px;
+            font-family: sans-serif;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <form action="">
-        <button id="logout1">logout</button>
-    </form>
+    <header>
+        <div class="logo">
+            Welcome
+        </div>
+        <button id='logout'>Log Out</button>
+    </header>
+    <section>
+        <span id="name"></span> <br>
+        <span id="email"></span> <br>
+        <span id="age"></span> <br>
+        <img src="" id="photo" width="300px">
+    </section>
+
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!--<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
-    <script src="app.js"></script>-->
+    <script src="authChange.js"></script>
 </body>
 </html>

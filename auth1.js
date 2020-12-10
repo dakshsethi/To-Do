@@ -51,12 +51,10 @@ signup.addEventListener('submit', (e) => {
     //     })
 
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        var src = '';
         const task = ref.child('images/'+ cred.user.uid + '.' + type[1]).put(file, metadata);
         
         task.then(snapshot => snapshot.ref.getDownloadURL())
             .then(url => {
-                src = url;
                 db.collection('userInfo').add({
                     uid: cred.user.uid,
                     name: name,
@@ -68,6 +66,17 @@ signup.addEventListener('submit', (e) => {
             }).catch(error => {
                 console.log('error');
             });
+
+        // db.collection('userInfo').add({
+        //     uid: cred.user.uid,
+        //     name: name,
+        //     email: email,
+        //     age: age,
+        //     gender: gender,
+        //     //photo: url
+        // }).then(() => {
+        //     console.log("Account created");
+        // });
 
     }).catch(error => {
         if(error.code == 'auth/email-already-in-use')
